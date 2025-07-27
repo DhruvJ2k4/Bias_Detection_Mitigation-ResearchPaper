@@ -1,0 +1,25 @@
+seed: 42
+
+data:
+  train_test_split: 0.2
+  target_column: loan_approved
+
+models:
+  logistic_regression:
+    C: 1.0
+    max_iter: 500
+  decision_tree:
+    max_depth: 8
+    min_samples_split: 10
+  random_forest:
+    n_estimators: 100
+    max_depth: 10
+  svm:
+    C: 1.0
+    kernel: rbf
+  kmeans:
+    n_clusters: 5
+
+evaluation:
+  metrics: [accuracy, precision, recall, f1, roc_auc]
+  fairness_metrics: [spd, eod, disparate_impact]
